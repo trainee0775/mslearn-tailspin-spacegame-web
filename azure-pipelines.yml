@@ -9,7 +9,8 @@ trigger:
   - '*'
 pool:
    vmImage: 'ubuntu-20.04'
-   demands: npm
+   demands:
+     - npm
     
       variables:
          buildConfiguration: 'Release'
@@ -20,7 +21,7 @@ pool:
                     packageType: sdk
                        version: '5.x'
            - task: Npm@1
-             D displayName: 'Run npm install'
+              displayName: 'Run npm install'
                  inputs:
                     verbose: false
              -script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --
